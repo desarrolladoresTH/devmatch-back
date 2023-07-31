@@ -4,8 +4,8 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from users.models import User
-from users.serializers import UserSignUpSerializer
+from user.models import User
+from user.serializers import UserSignUpSerializer
 # Create your views here.
 
 #donde se manejan las peticiones, se crea el crud
@@ -26,5 +26,3 @@ class UsersListView(APIView):
         serializer = UserSignUpSerializer(users, many=True) #mostrar vrios res
 
         return Response(serializer.data, status = status.HTTP_200_OK)
-
-
